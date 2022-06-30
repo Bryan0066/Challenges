@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <body>
+                <ul>
+                    <% @article.each do |item| %>
+                        <h2><%= item["title"] %></h2>
+                        <a href="<%=item["url"] %>">Link to article</a>
+                        <br></br>
+                        <li><%= item["description"] %></li>
+                        <br></br>
+                    <% end %>
+                </ul>
+            </body>
+        </html>
+    </head>
+</html>

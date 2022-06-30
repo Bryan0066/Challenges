@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "my first book"
+    },
+    {
+      "id": 2,
+      "title": "book from fetch"
+    },
+    {
+      "id": 3,
+      "title": "book from fetch"
+    },
+    {
+      "id": 4,
+      "title": "book from fetch"
+    },
+    {
+      "id": 5,
+      "title": "book from fetch"
+    },
+    {
+      "id": 6,
+      "title": "book from fetch"
+    }
+  ]
+}

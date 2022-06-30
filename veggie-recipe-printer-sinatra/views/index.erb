@@ -1,0 +1,37 @@
+<h1> <%= @name %> </h1>
+
+<h2> Ingredient </h2>
+
+<div class = ingredients>
+      <ul class = ingredients_list>
+            <% @ingredients.each do |ingredient| %>
+                  <li><%= ingredient %></li>
+            <% end %>
+      <ul>
+</div>
+
+<h2> Directions </h2>
+
+<div class=directions >
+      <ol class = directions_list>
+            <% @directions.each do |direction| %>
+                  <li><%= direction %></li>
+            <% end %>
+      </ol>
+<div>
+
+<h2> Reviews:</h2>
+
+<div class = reviews_list> 
+      <br></br>
+      <ol>
+            <% @reviews.each do |review| %>
+                  <li>
+                        <p><%=" Name: #{review[:username]}"%></p>
+                        <p><%=" Rating: #{review[:rating]}"%></p> 
+                        <p> <%="#{review[:review]}"%></p>
+                        <br></br>
+                  </li>
+            <% end %>
+      </ol>
+</div>
