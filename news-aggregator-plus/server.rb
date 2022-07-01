@@ -19,11 +19,6 @@ get "/articles/new" do
     erb :articles_new
 end
 
-get "/error" do
-    erb :error
-end
-
-
 post '/articles' do
     # Extract the relevant data from params
     new_title = params[:title]
@@ -39,7 +34,8 @@ post '/articles' do
 
     else
     #sad path
-    redirect "/error"
+    @error = "You submitted a blank form, please try again"
+    erb :articles_new
     end
 
 end

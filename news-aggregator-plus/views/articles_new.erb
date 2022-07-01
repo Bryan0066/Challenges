@@ -1,19 +1,30 @@
 <!-- views/index.erb -->
 
 <!doctype html>
+<link rel="stylesheet" href="/stylesheets/index.css"></head>
+
 <h1>
     New Article Form
 </h1>
+<body>
+    <h1>
+        <% if @error %>
+            <div class='error'>
+                <p><%= @error %></p>
+            </div>
+        <% end %>
+    </h1>
 
-<form action='/articles' method='post'>
-    <label>Title
-        <input type="text" name="title"></label>
+    <form action='/articles' method='post'>
+        <label>Title:
+            <input type="text" name="title" value="hello"></label>
 
-        <label>URL
-            <input type="text" name="description"></label>
+            <label>URL:
+                <input type="text" name="description" value="hello"></label>
 
-            <label>Description
+                <label>Description:
 
-                <input type="text" name="url"></label>
+                    <input type="text" name=" Description:" value="hello"></label>
 
-                <input type="submit"></form>
+                    <input type="submit" value="submit"></form>
+</body>

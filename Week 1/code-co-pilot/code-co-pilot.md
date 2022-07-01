@@ -30,6 +30,9 @@ Below are some questions to get the discussion flowing. You do not need to go th
 
 - What are concepts from the curriculum this week that you still feel unsure about? Take a moment to highlight the **toughest** concept, and ask if your partner has any guidance. You are encouraged to share code!
 
+-fetch 
+-
+
 - What insights or "aha" moments did you have this week that you can share with your partner?
 
 - Did you ask any questions in the #questions channel? Share what you learned with your partner - no question is silly, even if it was a small error, it might help your partner in the future!
