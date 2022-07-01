@@ -1,19 +1,7 @@
-import React from 'react';
-import ReactDOM  from 'react';
+import React from "react";
+import ReactDom from "react-dom";
 
-import './app.scss';
+import "./app.scss";
+import Popup from "./components/popup";
 
-
-// import components, if rendered in ReactDOM.render
-
-// call on ReactDOM.render with the correct arguments
-
-const message = <div>Hello from React!</div>
-ReactDOM.render(
-
-    message,
-    document.getElementById("app")
-
-) 
-
-
+ReactDom.render(<Popup />, document.getElementById("app"));
