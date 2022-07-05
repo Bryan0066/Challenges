@@ -1,34 +1,44 @@
-describe('Strings', () => {
-  it('allCaps() should take in a string and return that string with all capital letters', () => {
-    let sentence = 'Hey, how are you doing?'
+const { without } = require("underscore");
 
-    expect(allCaps(sentence)).toEqual('HEY, HOW ARE YOU DOING?')
-  })
+describe("Strings", () => {
+  it("allCaps() should take in a string and return that string with all capital letters", () => {
+    let sentence = "Hey, how are you doing?";
 
-  it('combine() should add two strings together', () => {
-    let str1 = 'Peter'
-    let str2 = 'Parker'
+    function allCaps(string) {
+      return string.toUpperCase();
+    }
 
-    expect(combine(str1, str2)).toEqual('Peter Parker')
-  })
-
-  it('reduceString() should reduce duplicate characters in a string to the desired amount given', () => {
-    expect(reduceString('aaaabbbb', 2)).toEqual('aabb');
-    expect(reduceString('xaaabbbb', 2)).toEqual('xaabb');
-    expect(reduceString('aaaabbbb', 1)).toEqual('ab');
-    expect(reduceString('aaxxxaabbbb', 2)).toEqual('aaxxaabb');
+    expect(allCaps(sentence)).toEqual("HEY, HOW ARE YOU DOING?");
   });
 
-  it('reverseString() should return the reverse of a given string', () => {
+  it("combine() should add two strings together", () => {
+    let str1 = "Peter";
+    let str2 = "Parker";
+
+    function combine(arg1, arg2) {
+      return arg1 + " " + arg2;
+    }
+
+    expect(combine(str1, str2)).toEqual("Peter Parker");
+  });
+
+  it("reduceString() should reduce duplicate characters in a string to the desired amount given", () => {
+    expect(reduceString("aaaabbbb", 2)).toEqual("aabb");
+    expect(reduceString("xaaabbbb", 2)).toEqual("xaabb");
+    expect(reduceString("aaaabbbb", 1)).toEqual("ab");
+    expect(reduceString("aaxxxaabbbb", 2)).toEqual("aaxxaabb");
+  });
+
+  it("reverseString() should return the reverse of a given string", () => {
     let inputStrings = [
-      'abc',
-      'i am a string of characters',
-      'A man, a plan, a canal: Panama'
+      "abc",
+      "i am a string of characters",
+      "A man, a plan, a canal: Panama",
     ];
     let outputStrings = [
-      'cba',
-      'sretcarahc fo gnirts a ma i',
-      'amanaP :lanac a ,nalp a ,nam A'
+      "cba",
+      "sretcarahc fo gnirts a ma i",
+      "amanaP :lanac a ,nalp a ,nam A",
     ];
 
     inputStrings.forEach((str, index) => {

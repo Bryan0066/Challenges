@@ -1,11 +1,7 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from "react";
+import ReactDOM from "react-dom";
 
-import style from "./styles/app.scss"
+import style from "./styles/app.scss";
+import EventManagementApp from "./components/EventManagementApp.js";
 
-ReactDOM.render(
-  <div>
-    We need help managing events! OOOOooooOOOOoooohhh!
-  </div>,
-  document.getElementById("app")
-)
+ReactDOM.render(<EventManagementApp />, document.getElementById("app"));
