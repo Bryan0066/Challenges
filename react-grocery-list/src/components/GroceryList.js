@@ -1,60 +1,16 @@
-import react from "react";
+import React from "react";
 import Grocery from "./grocery";
 
 const GroceryList = (props) => {
+  // we will eventually be using .map over props.groceries
+  // in the callback function of .map
+  // return (create)
+  // a new Grocery component with the grocery object we are iterating over
+  const items = props.groceries.map((item) => {
 
-  something = groceries.map((item) => {
-    props.
-    debugger;
+    return <Grocery name={item.name}/>;
   });
-
-  return (
-
-    
-
-  ) 
-  
-  ;
+  return( <ul className="container">{items}</ul>);
 };
-
-// <div>
-// <h1>Grocery List</h1>
-
-// <ul>
-//   <li>
-//     Oranges
-//     <button
-//       type="button"
-//       onClick={(event) => {
-//         alert("Button was clicked");
-//       }}
-//     >
-//       Delete
-//     </button>
-//   </li>
-//   <li>
-//     Bananas
-//     <button
-//       type="button"
-//       onClick={(event) => {
-//         alert("Button was clicked");
-//       }}
-//     >
-//       Delete
-//     </button>
-//   </li>
-//   <li>
-//     Bread
-//     <button
-//       type="button"
-//       onClick={(event) => {
-//         alert("Button was clicked");
-//       }}
-//     >
-//       Delete
-//     </button>
-//   </li>
-// </ul>
-// </div>
 
 export default GroceryList;

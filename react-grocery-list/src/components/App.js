@@ -1,7 +1,8 @@
 import React from "react"
 import GroceryList from "./GroceryList"
 
-const App = props => {
+
+const App = (props) => {
   const groceryData = [
     { id: 1, name: "Oranges" },
     { id: 2, name: "Bananas" },

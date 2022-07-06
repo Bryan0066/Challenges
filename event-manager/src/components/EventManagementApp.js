@@ -1,5 +1,5 @@
 import React from "react";
-import EventTile from "./EventTile";
+import DisplayEventTile from "./DisplayEventTile";
 
 const EventManagementApp = (props) => {
   const events = [
@@ -29,35 +29,12 @@ const EventManagementApp = (props) => {
     },
   ];
   return (
-    <div class="event-management-app">
+    <div className="event-management-app">
       <h1>Now viewing your upcoming events</h1>
-      <EventTile
-        title={events[0].title}
-        timePeriod={events[0].timePeriod}
-        description={events[0].description}
-        eventType={events[0].eventType}
-      />
-      <EventTile
-        title={events[1].title}
-        timePeriod={events[1].timePeriod}
-        description={events[1].description}
-        eventType={events[1].eventType}
-      />
-      <EventTile
-        title={events[2].title}
-        timePeriod={events[2].timePeriod}
-        description={events[2].description}
-        eventType={events[2].eventType}
-      />
-      <EventTile
-        title={events[3].title}
-        timePeriod={events[3].timePeriod}
-        description={events[3].description}
-        eventType={events[3].eventType}
-      />
+      <DisplayEventTile events = {events} />
       <div>
         <img
-          class="fit-picture"
+          className="fit-picture"
           src="https://horizon-production.s3.amazonaws.com/images/challenge/event-manager/event-manager-dogs.jpg"
         />
         <p> "The day may be ruff, but we are here for you in spirit!"</p>
