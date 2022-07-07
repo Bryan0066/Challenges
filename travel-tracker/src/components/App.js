@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import WanderlustWishlist from "./WanderlustWishlist";
 
-const App = () => {
-
-  return (
-    <div id="wishlist-div">
-      <div className="grid-container">
-        <div className="small-12 text-center">
-          <h3>Wanderlust Wishlist</h3>
-        </div>
-      </div>
-    </div>
-  )
-}
+const App = (props) => {
+  return <WanderlustWishlist
+          data={props.data}
+          />;
+};
 
 export default App;
