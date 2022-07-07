@@ -7,6 +7,8 @@ const InstructionsContainer = props => {
   const supplies = props.data.supplies
   const directions = props.data.directions
 
+  const [stepSelected, setSelectedStep] = useState(directions.id)
+
   const items = supplies.map(supply => {
     return (
       <ItemTile
@@ -19,15 +21,21 @@ const InstructionsContainer = props => {
 
   const steps = directions.map(direction => {
 
-    // const setSelectedStepClosure = () => {
-      //   setter function with id of direction as an argument
-      //   e.g. setSelectedStep(direction.id)
-      // }
+    const setSelectedStepClosure = () => {
+        setSelectedStep(direction.id)
+      }
+    let className = "body";
+    directions
+    if (direction.id === stepSelected) {
+      className = "selected";
+    }
     return (
       <StepTile
         step={direction.step}
         key={direction.id}
         id={direction.id}
+        className={className}
+        onClick={setSelectedStepClosure}
       />
     )
   })
