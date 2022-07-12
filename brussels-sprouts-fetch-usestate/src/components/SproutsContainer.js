@@ -7,18 +7,18 @@ const SproutsContainer = (props) => {
   const [recipes, setRecipes] = useState([]);
 
   const getRandomRecipe = async () => {
-    try {
+    // try {
       const response = await fetch("/api/v1/random-recipe");
-      if (!response.ok) {
-        const errorMessage = `${response.status} (${response.statusText})`;
-        const error = new Error(errorMessage);
-        throw error;
-      }
+      // if (!response.ok) {
+      //   const errorMessage = `${response.status} (${response.statusText})`;
+      //   const error = new Error(errorMessage);
+      //   throw error;
+      // }
       const dish = await response.json();
       setRecipes([]);
       setRecipe(dish);
-    } catch (err) {
-      console.error(`Error in fetch: ${err.message}`);
+    // } catch (err) {
+    //   console.error(`Error in fetch: ${err.message}`);
     }
   };
 

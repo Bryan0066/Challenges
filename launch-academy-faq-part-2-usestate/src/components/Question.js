@@ -2,6 +2,8 @@ import React from 'react';
 
 const Question = props => {
   let answer, button, questionClass;
+
+
   if (props.selected) {
     questionClass = 'selected-question'
     button = <i onClick={props.handleClick} className='fa fa-minus-square fa-2x green' aria-hidden='true'></i>
@@ -13,7 +15,7 @@ const Question = props => {
 
   return(
     <div>
-      <div className={questionClass}>
+      <div className={questionClass} onClick={props.getQuestions}>
         {button}
         <h5 onClick={props.handleClick}>{props.question}</h5>
       </div>
