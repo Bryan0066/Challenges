@@ -3,7 +3,8 @@ import React, { useState } from "react";
 const FormContainer = (props) => {
   const [currentQuestion, setCurrentQuestion] = useState({
     question: "",
-    answer: "who knows",
+    answer: "",
+    id:""
   });
 
   console.log(currentQuestion);
@@ -11,10 +12,10 @@ const FormContainer = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     let formPayload = {
-      question: currentQuestion.question,
-      answer: currentQuestion.answer,
-      id: 5,
+      ...currentQuestion,
+      [event.currentTarget.name]: event.currentTarget.value
     };
+
     props.addQuestion(formPayload);
 
     setCurrentQuestion("");

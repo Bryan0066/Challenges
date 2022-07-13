@@ -33,5 +33,20 @@
     "question": "i kn ow",
     "answer": "who knows",
     "id": 7
+  },
+  {
+    "question": "hello ",
+    "answer": "hello o o o",
+    "id": 8
+  },
+  {
+    "question": "yes",
+    "answer": "yes",
+    "id": 9
+  },
+  {
+    "question": "hello",
+    "answer": "how are you",
+    "id": 10
   }
 ]
