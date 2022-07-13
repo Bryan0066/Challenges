@@ -24,8 +24,7 @@ const FAQList = (props) => {
       body: JSON.stringify(formPayload),
     });
     const body = await response.json();
-
-    setQuestions(questions.concat(body.question));
+    setQuestions(questions.concat(body));
   };
 
   // everything from here to the return is for clicking and creating question tiles. We likely wont need to touch this much

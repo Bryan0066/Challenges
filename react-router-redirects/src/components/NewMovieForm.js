@@ -1,45 +1,46 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useState } from "react"
+import { Redirect } from 'react-router-dom'
 
-const NewMovieForm = (props) => {
-  const [movieTitle, setMovieTitle] = useState("");
-  const [shouldRedirect, setShouldRedirect] = useState(false);
+const NewMovieForm = props => {
+  const [shouldRedirect, setShouldRedirect] = useState(false)
+  const [movieTitle, setMovieTitle] = useState(false)
 
-  const onTitleChange = (event) => {
-    setMovieTitle(event.target.value);
-  };
+  const onTitleChange = event => {
+    setMovieTitle(event.target.value)
+  }
 
-  const postNewMovie = async () => {
-    event.preventDefault();
+  const postNewMovie = async (event) => {
+    event.preventDefault()
 
     try {
-      const response = await fetch("/api/v1/movies", {
+      const response = await fetch('/api/v1/movies', {
         method: "POST",
         credentials: "same-origin",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify({ title: movieTitle }),
-      });
+        body: JSON.stringify({ title: movieTitle })
+      })
       if (!response.ok) {
-        const errorMessage = `${response.status} (${response.statusText})`;
-        const error = new Error(errorMessage);
-        throw error;
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw(error)
       }
-      setShouldRedirect(true);
-    } catch (err) {
-      console.error(`Error in fetch: ${err.message}`);
+      console.log("Movie was added successfully!")
+      setShouldRedirect(true) // this is new!
+    } 
+    catch(err) {
+      console.error(`Error in fetch: ${err.message}`)
     }
-  };
+  }
 
   if (shouldRedirect) {
-    return <Redirect to="/movies" />;
+    return <Redirect push to="/movies" />
   }
 
   return (
     <form onSubmit={postNewMovie}>
-      <label>
-        Movie Title
+      <label> New Movie
         <input
           type="text"
           name="title"
@@ -49,7 +50,7 @@ const NewMovieForm = (props) => {
       </label>
       <input type="submit" />
     </form>
-  );
-};
+  )
+}
 
-export default NewMovieForm;
+export default NewMovieForm

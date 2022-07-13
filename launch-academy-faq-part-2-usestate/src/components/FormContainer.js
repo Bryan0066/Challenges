@@ -4,10 +4,8 @@ const FormContainer = (props) => {
   const [currentQuestion, setCurrentQuestion] = useState({
     question: "",
     answer: "",
-    id:""
+    id:"",
   });
-
-  console.log(currentQuestion);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,10 +13,8 @@ const FormContainer = (props) => {
       ...currentQuestion,
       [event.currentTarget.name]: event.currentTarget.value
     };
-
     props.addQuestion(formPayload);
 
-    setCurrentQuestion("");
   };
 
   //   this isnt yet done because this doesnt work for the answer field
@@ -43,7 +39,7 @@ const FormContainer = (props) => {
         name="answer"
         onChange={handleChange}
       ></input>
-      <input className="button" type="submit" value="Submit" />
+      <input className="button" type="submit" />
     </form>
   );
 };
