@@ -14,10 +14,8 @@ const FormContainer = (props) => {
       [event.currentTarget.name]: event.currentTarget.value
     };
     props.addQuestion(formPayload);
-
   };
 
-  //   this isnt yet done because this doesnt work for the answer field
   const handleChange = (event) => {
     setCurrentQuestion({
       ...currentQuestion,

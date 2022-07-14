@@ -8,7 +8,7 @@ import Form from "./Form";
 
 const NavBar = (props) => {
   return (
-    <div className="grid-x">
+    <div className="row-column">
       <div className="cell">
         <button>
           <Link to="/Greeting">Greeting</Link>

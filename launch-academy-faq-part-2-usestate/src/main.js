@@ -1,9 +1,6 @@
-import './main.scss';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import FAQList from './components/FAQList';
+import "./main.scss";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
 
-ReactDOM.render(
-  <FAQList />,
-  document.getElementById('app')
-);
+ReactDOM.render(<App />, document.getElementById("app"));
