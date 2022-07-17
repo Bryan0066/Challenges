@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import LauncherTile from "./LauncherTile";
 
 const LauncherList = (props) => {
@@ -11,34 +10,29 @@ const LauncherList = (props) => {
 
   const getLaunchers = async () => {
     const response = await fetch("/api/v1/launchers");
-    let data = await response.json();
-    //console.log(data)
+    const data = await response.json();
     setLaunchers(data);
   };
+  debugger
 
-  const launcherList = launchers.map((launcher) => {
+  const launcherComponentTiles = launchers.map((launcher) => {
+      
     return (
-      <li key={launcher.id}>
-        {" "}
-        <Link to={`/launchers/${launcher.id}`}>
-          {launcher.name}
-        </Link>
-      </li>
+          <LauncherTile>
+            name={launcher.name}
+            id={launcher.id}
+            key={launcher.id}
+            bio={launcher.bio}
+          </LauncherTile>
     );
   });
 
   return (
     <div>
-      <ul>{launcherList}</ul>
+      <h1>Hello</h1>
+      {launcherComponentTiles}
     </div>
   );
 };
 
 export default LauncherList;
-
-{
-  /* <Link to="/launchers/${id}">{launcher.name}</Link> */
-}
-
-// change your li's to instead be li's that you render in a LauncherTile
-// nested a Link tag from react-router inside of your launcher lis

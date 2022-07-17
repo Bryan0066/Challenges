@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Question from "./Question";
-import FormContainer from "./FormContainer";
+import QuestionsForm from "./QuestionsForm";
 
 const FAQList = (props) => {
   const [questions, setQuestions] = useState([]);
+  const [selectedQuestion, setSelectedQuestion] = useState([]);
 
   const getQuestions = async () => {
     const response = await fetch("/api/v1/questions");
@@ -26,9 +27,6 @@ const FAQList = (props) => {
     const body = await response.json();
     setQuestions(questions.concat(body));
   };
-
-  // everything from here to the return is for clicking and creating question tiles. We likely wont need to touch this much
-  const [selectedQuestion, setSelectedQuestion] = useState([]);
 
   const toggleQuestionSelect = (id) => {
     if (id === selectedQuestion) {
@@ -62,12 +60,8 @@ const FAQList = (props) => {
   return (
     <div className="page">
       <h1>We Are Here To Help</h1>
-      <div className="question-list">
-        {questionListItems}
-        <Question getQuestions={getQuestions} />
-      </div>
-
-      <FormContainer addQuestion={addQuestion} />
+      <div className="question-list">{questionListItems}</div>
+      <QuestionsForm addQuestion={addQuestion} />
     </div>
   );
 };

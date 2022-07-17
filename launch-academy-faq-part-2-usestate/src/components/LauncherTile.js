@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LauncherTile = (props) => {
-  debugger;
   return (
     <div>
-      <li>{props} </li>
+      <Link to={`/launchers/${props.id}`}>{props.name}</Link>
     </div>
   );
 };

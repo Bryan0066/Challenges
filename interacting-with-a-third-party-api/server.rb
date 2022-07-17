@@ -23,7 +23,7 @@ end
 get "/api/v1/forecast" do
   city_name = params[:city_name]
 
-  url = "http://api.openweathermap.org/data/2.5/weather?q=#{city_name}&appid=#{OPEN_WEATHER_API_KEY}"
+  url = "http://api.openweathermap.org/data/2.5/weather?q=#{city_name}&appid=#{OPEN_WEATHER_API_KEY}&units=imperial"
   api_response = Faraday.get(url)
   parsed_response = JSON.parse(api_response.body)
 
