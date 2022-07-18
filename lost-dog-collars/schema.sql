@@ -1,47 +1,80 @@
---#1 Which collars have a known owner? Display only collars with known owners and those owners' names.
+CREATE TABLE dog_owners (
+  id serial,
+  name varchar(255) NOT NULL,
+  dog_name varchar(255) NOT NULL
+);
 
---#2 For which collars is there no known owner? Display only collars without known owners.
+CREATE TABLE lost_dog_collars (
+  id serial,
+  dog_name varchar(255) NOT NULL
+);
 
---#3 What collars are in our possession? Display all collars in our possession. If an owner exists for a given collar, display that also.
+INSERT INTO dog_owners (name, dog_name)
+  VALUES (
+    'Omid', 'Bronson'
+  );
 
---#4 What owners do we know about? Display all owners known to us. If a collar matches that owner, display the collar also.
+INSERT INTO dog_owners (name, dog_name)
+  VALUES (
+    'Evan', 'Bogie'
+  );
 
--------
---#1
+INSERT INTO dog_owners (name, dog_name)
+  VALUES (
+    'Whitney', 'Gilly'
+  );
 
---Displays records with both parts of info
-SELECT dog_owners.name, lost_dog_collars.dog_name
-  FROM dog_owners
-  JOIN lost_dog_collars
-ON (dog_owners.dog_name = lost_dog_collars.dog_name);
+INSERT INTO dog_owners (name, dog_name)
+  VALUES (
+    'Spencer', 'Lilly'
+  );
 
---# 2
---Displays records of right with no left
-SELECT dog_owners.name, lost_dog_collars.dog_name
-FROM dog_owners
-RIGHT JOIN lost_dog_collars
-ON (dog_owners.dog_name = lost_dog_collars.dog_name)
-WHERE dog_owners.name IS NULL ;
+INSERT INTO dog_owners (name, dog_name)
+  VALUES (
+    'Dan', 'Apple'
+  );
 
---# 3 
---Displays right, and any associated left
-SELECT dog_owners.name, lost_dog_collars.dog_name
-    FROM dog_owners
-    RIGHT JOIN lost_dog_collars
-ON (dog_owners.dog_name = lost_dog_collars.dog_name);
+INSERT INTO dog_owners (name, dog_name)
+  VALUES (
+    'Dan', 'Linux'
+  );
 
---# 4
--- Displays left, and any associated right.
-SELECT dog_owners.name, lost_dog_collars.dog_name
-    FROM dog_owners
-    LEFT JOIN lost_dog_collars
-ON (dog_owners.dog_name = lost_dog_collars.dog_name);
+INSERT INTO lost_dog_collars (dog_name)
+  VALUES (
+    'Bogie'
+  );
 
---_________
+INSERT INTO lost_dog_collars (dog_name)
+  VALUES (
+    'Lassie'
+  );
 
---Same as #3 but orders the records
-SELECT dog_owners.name, lost_dog_collars.dog_name
-FROM dog_owners
-RIGHT JOIN lost_dog_collars
-ON (dog_owners.dog_name = lost_dog_collars.dog_name)
-ORDER BY dog_owners.name;
+INSERT INTO lost_dog_collars (dog_name)
+  VALUES (
+    'Gilly'
+  );
+
+INSERT INTO lost_dog_collars (dog_name)
+  VALUES (
+    'Lilly'
+  );
+
+INSERT INTO lost_dog_collars (dog_name)
+  VALUES (
+    'Fido'
+  );
+
+INSERT INTO lost_dog_collars (dog_name)
+  VALUES (
+    'Linux'
+  );
+
+INSERT INTO lost_dog_collars (dog_name)
+  VALUES (
+    'Bronson'
+  );
+
+INSERT INTO lost_dog_collars (dog_name)
+  VALUES (
+    'Goose'
+  );
