@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <h1>List of articles</h1>
+        <link rel="stylesheet" href="/stylesheets/index.css"></head>
+    <body>
+        <ul>
+            <% @articles.each do |item| %>
+                <h2><%= item["title"] %></h2>
+                <a href="<%=item["url"] %>">
+                    Link to article
+                </a>
+                <br><br>
+                <p><%= item["description"] %></p>
+                <br><br>
+            <% end %>
+        </ul>
+        <div>
+            <button type="button">
+                <a href="articles/new" value="submit">
+                    Submit new article
+                </a>
+            </button>
+        </div>
+    </body>
+</html></div><script src="/javascripts/app.js"></script></head></html>
