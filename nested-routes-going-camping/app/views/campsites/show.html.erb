@@ -1,0 +1,9 @@
+<h1>
+  <%= "#{@campsite.name}"%>
+
+</h1>
+<p><% @campers.each do |camper| %>
+    <li>
+      <%= camper.name %>
+    </li>
+  <% end %></p>

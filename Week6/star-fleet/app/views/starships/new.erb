@@ -1,0 +1,26 @@
+<form action="/starships/new" method="post">
+    <ul style="list-style: none;" >
+        <li>
+            <label for="name">Please write the name of the ship: </label>
+                <input type="text" id="name" name="name" value="<%= @new_name %>">
+
+        </li>
+        <li>
+            <label for="ship_class">Please write the class of the ship: </label>
+
+                <input type="text" id="ship_class" name="ship_class" value="<%= @new_class %>">
+
+        </li>
+        <li>
+            <label for="location">Please add a location for the ship: </label>
+
+                <input type="text" id="location" name="location" value="<%=@new_location%>">
+        </li>  
+        <li>
+            <input id ="submit-button" type="submit">
+        </li>
+    </ul>
+</form>
+<%if @error%>
+        <p class="error" style="font-size: 30px; color: red;"> <%= @error %> </p>
+<%end%>
