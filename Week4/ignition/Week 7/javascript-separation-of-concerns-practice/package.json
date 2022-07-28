@@ -1,7 +1,0 @@
-{
-  "name": "javascript-separation-of-concerns-practice",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "type": "module"
-}

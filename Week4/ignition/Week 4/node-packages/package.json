@@ -1,9 +1,0 @@
-{
-  "name": "node-packages",
-  "version": "1.0.0",
-  "description": "An introduction to using Node packages.",
-  "main": "main.js",
-  "author": "Launch Academy",
-  "license": "MIT",
-  "type": "module"
-}

@@ -1,6 +1,0 @@
-# Files to ignore when uploading to Launch
-geometric-classes.md
-.rspec
-Gemfile
-Gemfile.lock
-Rakefile
