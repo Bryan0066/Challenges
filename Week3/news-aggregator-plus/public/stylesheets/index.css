@@ -1,0 +1,13 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #efdecd;
+    text-align: center;
+}
+a{
+    font-style: italic;
+}
+.error{
+    color: red;
+    font-size:xx-large;
+    font-family: monospace;
+}

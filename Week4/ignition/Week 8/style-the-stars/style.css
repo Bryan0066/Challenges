@@ -1,0 +1,32 @@
+.title {
+    text-align: center;
+}
+
+body {
+    background-image: url("https://i.imgur.com/AVtMpos.jpeg");
+    background-color: #240621;
+    color: #adff2f;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.small-page-section {
+    color: #a4c639;
+}
+
+h1 {
+    color: #ffff;
+    text-align: center;
+}
+
+li {
+    color: #5f9ea0;
+}
+
+.facts-section {
+    border: 3px solid #ffff;
+    padding: 15px;
+}
+
+p {
+    color: fuchsia;
+}

@@ -1,0 +1,5 @@
+{
+    "editor.suggest.showStatusBar": false,
+    "zenMode.hideStatusBar": true,
+    "debug.showSubSessionsInToolBar": false
+}

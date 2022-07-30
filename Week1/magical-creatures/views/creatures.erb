@@ -1,0 +1,8 @@
+<h1>List of Creatures</h1>
+
+<% @creature_objects.each do |creature| %>
+
+  <h2><a href= "http://localhost:4567/creatures/<%=creature.name%>"> <%=creature.name%></a></h2>
+  <br></br>
+  
+<% end %>
