@@ -1,3 +1,9 @@
 # Breakable Toy Ideas
 
-<Your ideas, here>
+- Game?
+- Weather app
+    - Physical unit
+    - Dial tells weather conditions/temp
+    - Pi? Arduino?
+- Forum
+    - For what?
